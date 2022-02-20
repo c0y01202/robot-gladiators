@@ -11,6 +11,8 @@ var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+//wrap game logic in a start game function startGame()
+
 // fight function
 var fight = function(enemyName) {
   //repeat and execute as long as the enemy-robot is alive
@@ -19,6 +21,8 @@ var fight = function(enemyName) {
 }
   // Alert players that they are starting the round
   
+  //adding start game function
+  startGame()
 
   // ask player if they'd like to fight or run
   var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -85,6 +89,13 @@ if (promptFight === "skip" || promptFight === "SKIP") {
       break;
     }
 
+    //After player skips or defeats an enemy (and there are still more robots to fight)
+    if (confirmSkip) {
+      window.alert("Do you want to shop?");
+    }
+    if (confirmDefeat) {
+      window.alert("Do you want to shop?")
+    }
     
     // if no (false), ask question again by running fight() again
     else {
@@ -110,7 +121,12 @@ for(var i = 0; i < enemyNames.length; i++) {
 
 // Game States
 // "WIN" - Player robot has defeated all enemy-robots
-// "LOSE" - Player robot's health is zero or less
+// "LOSE" - Player robot's health is zero or less 
+// when player is defeated ot there are no more enemies, call endGame() function here
+endgame();
+if (confirmendGame) {
+  window.alert("Game Over");
 //    * Fight all enemy-robots
 
-// if the enemy-robot's health is zero or less, exit from the fight loop.
+//Adding shoip function
+WaveShaperNode()
